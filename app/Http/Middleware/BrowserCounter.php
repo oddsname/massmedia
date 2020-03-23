@@ -25,9 +25,9 @@ class BrowserCounter
             $browser = $this->getBrowser();
         }
 
-        UniqueUsers::where('ip_address', $ip)->firstOr(function () use ($ip, $browser){
-           UniqueUsers::create(['browser' => $browser, 'ip_address' => $ip]);
-        });
+//        UniqueUsers::where('ip_address', $ip)->firstOr(function () use ($ip, $browser){
+//            UniqueUsers::create(['browser' => $browser, 'ip_address' => $ip]);
+//        });
 
         return $next($request);
     }

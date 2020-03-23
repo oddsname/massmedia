@@ -28,7 +28,7 @@ class FileModel extends BaseModel
 
     public static function saveByModel($files, BaseModel $model)
     {
-        $paths = Uploader::upload($files);
+        $paths = Uploader::upload($files, $model->id);
 
         foreach ($paths as $path) {
             $path_to_array = explode('/', $path);

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function(){
-    return redirect('/admin/post/');
+    return redirect(route('post.index'));
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => '/admin', 'as' => 'admin.', 'middleware' => 'browser.counter'], function(){
@@ -22,8 +22,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => '/admin', 'as' => 'admin.', 'm
     Route::resource('category', 'CategoryController')->except(['show']);
 });
 
-Route::group(['namespace' => 'User', 'prefix' => '/user'], function(){
-
+Route::group(['namespace' => 'User', 'prefix' => '/user', 'middleware' => 'browser.counter'], function(){
+    Route::get('/posts', 'PostController@index')->name('post.index');
+    Route::get('/post/{post}', 'PostController@single')->name('post.single');
 });
 
 

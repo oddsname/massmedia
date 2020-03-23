@@ -17,6 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+//        \DB::listen(function ($d){
+//            dump($d->sql);
+//        });
         $this->app->singleton(Generator::class, function(){
             return Factory::create('uk_UA');
         });

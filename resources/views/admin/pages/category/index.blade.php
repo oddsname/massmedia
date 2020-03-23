@@ -8,22 +8,6 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                {{--@foreach($data as $item)--}}
-                {{--<div class="col-lg-3 col-xs-6" data-id="{{$item->id}}">--}}
-                {{--<!-- small box -->--}}
-                {{--<div class="small-box bg-aqua">--}}
-                {{--<div class="inner">--}}
-                {{--<h3>{{$item->name}}</h3>--}}
-
-                {{--<p>{{$item->category->name}}</p>--}}
-                {{--</div>--}}
-                {{--<div class="icon">--}}
-                {{--<i class="ion ion-bag"></i>--}}
-                {{--</div>--}}
-                {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--@endforeach--}}
 
                 <div class="col-12">
                     <div class="card">
@@ -55,7 +39,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Description</th>
                                     <th>Operations</th>
                                 </tr>
                                 </thead>
@@ -64,7 +47,6 @@
                                     <tr>
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->name}}</td>
-                                        <td>{{ \Str::limit($item->description, 100) }}</td>
                                         <td>
                                             <x-operation-buttons :model="$item" folder="category" />
                                         </td>

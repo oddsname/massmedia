@@ -9,13 +9,13 @@
                 <li class="nav-item has-treeview menu-open">
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('admin.post.index')}}" class="nav-link active">
+                            <a href="{{route('admin.post.index')}}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Admin</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('post.index')}}" class="nav-link">
+                            <a href="{{route('post.index')}}" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User</p>
                             </a>

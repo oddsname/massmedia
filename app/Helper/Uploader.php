@@ -9,12 +9,11 @@ use Symfony\Component\HttpFoundation\FileBag;
 
 class Uploader
 {
-    private static $defaultFolder = '/files/uploaded/';
     private static $folderToLoad = '/files/uploaded/';
 
     public static function upload($files, $folder = null) : array
     {
-        self::$folderToLoad = $folder ?? self::$defaultFolder;
+        self::$folderToLoad .= $folder ?? '';
 
         if ($files instanceof UploadedFile) {
             return [ self::uploadSingle($files) ];
@@ -48,8 +47,6 @@ class Uploader
 
     private static function getNewFileName(UploadedFile $file): string
     {
-//        return md5($file->getClientOriginalName() . Carbon::now()->toString()) . '.' . $file->getClientOriginalExtension();
-
         $filename = str_replace('.'.$file->getClientOriginalExtension(), '', $file->getClientOriginalName());
         $path = public_path().self::$folderToLoad.$filename;
 

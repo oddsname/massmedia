@@ -17,7 +17,7 @@
                 <!-- left column -->
                 <x-form :action="route('admin.category.store')" method="POST">
                     <x-input.text name="name" text="Name" />
-                    <x-input.text name="description" text="Description" />
+                    <x-input.wysiwyg name="description" text="Description" />
                 </x-form>
             </div>
             <!-- /.row -->

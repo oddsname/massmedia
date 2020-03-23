@@ -17,6 +17,11 @@ function summernoteInit() {
             image: [],
             link: [],
             air: []
-        }
+        },
     });
+
+    let imageUploadDiv = $('div.note-group-select-from-files');
+    if (imageUploadDiv.length) {
+        imageUploadDiv.remove();
+    }
 }

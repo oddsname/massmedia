@@ -55,13 +55,11 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        $post = Post::where('id', $id)->with('file')->firstOrFail();
-
         return view('admin.pages.'.$this->folder.'.edit',[
             'folder' => $this->folder,
             'data' => $post,
@@ -73,12 +71,12 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  PostRequest  $request
-     * @param  int  $id
+     * @param  Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        Post::where('id', $id)->firstOrFail()->updateByAdmin($request->input(), $request->files);
+        $post->updateByAdmin($request->input(), $request->files);
 
         return redirect(route('admin.post.index'));
     }
@@ -86,12 +84,12 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        Post::where('id', $id)->firstOrFail()->deleteByAdmin();
+        $post->deleteByAdmin();
 
         return redirect(route('admin.post.index'));
     }

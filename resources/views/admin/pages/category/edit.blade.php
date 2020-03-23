@@ -17,7 +17,7 @@
                 <!-- left column -->
                 <x-form :action="route('admin.category.update', ['category' => $data])" method="PUT">
                     <x-input.text name="name" :value="$data->name" text="Name" />
-                    <x-input.text name="description" :value="$data->description" text="Description" />
+                    <x-input.wysiwyg name="description" text="Description" :value="$data->description" />
                 </x-form>
             </div>
             <!-- /.row -->
