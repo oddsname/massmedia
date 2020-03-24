@@ -37,7 +37,16 @@ class Post extends BaseModel
 
     public function deleteByAdmin(){
         FileModel::deleteByModel($this);
+        Comment::deleteByModel($this);
         $this->delete();
+    }
+
+    public function scopeCategory($query, $category){
+        if(isset($category)){
+            return $query->where('category_id', $category);
+        }
+
+        return $query;
     }
 
     public function category()

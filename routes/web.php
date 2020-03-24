@@ -22,9 +22,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => '/admin', 'as' => 'admin.', 'm
     Route::resource('category', 'CategoryController')->except(['show']);
 });
 
-Route::group(['namespace' => 'User', 'prefix' => '/user', 'middleware' => 'browser.counter'], function(){
+Route::group(['namespace' => 'User', 'middleware' => 'browser.counter'], function(){
     Route::get('/posts', 'PostController@index')->name('post.index');
     Route::get('/post/{post}', 'PostController@single')->name('post.single');
+
+    Route::get('/categories', 'CategoryController@index')->name('category.index');
+    Route::get('/category/{category}', 'CategoryController@single')->name('category.single');
 });
 
 

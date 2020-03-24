@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostRequest;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -20,7 +21,7 @@ class PostController extends Controller
     public function index()
     {
         return view('admin.pages.'.$this->folder.'.index', [
-            'data' => Post::orderBy('id', 'desc')->with('category')->get(),
+            'data' => Post::orderBy('id', 'desc')->with('category', 'comments')->get(),
             'folder' => $this->folder,
         ]);
     }
@@ -89,6 +90,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        Comment::deleteByModel($post);
         $post->deleteByAdmin();
 
         return redirect(route('admin.post.index'));

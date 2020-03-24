@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 
+
     {{--<link rel="stylesheet" href="/assets/dist/css/skins/_all-skins.min.css">--}}
 
     <link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/assets/dist/css/custom/style.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/assets/plugins/summernote/summernote.css">
     <script src="/assets/plugins/summernote/summernote.js"></script>

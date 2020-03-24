@@ -8,22 +8,6 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                {{--@foreach($data as $item)--}}
-                {{--<div class="col-lg-3 col-xs-6" data-id="{{$item->id}}">--}}
-                {{--<!-- small box -->--}}
-                {{--<div class="small-box bg-aqua">--}}
-                {{--<div class="inner">--}}
-                {{--<h3>{{$item->name}}</h3>--}}
-
-                {{--<p>{{$item->category->name}}</p>--}}
-                {{--</div>--}}
-                {{--<div class="icon">--}}
-                {{--<i class="ion ion-bag"></i>--}}
-                {{--</div>--}}
-                {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--@endforeach--}}
 
                 <div class="col-12">
                     <div class="card">
@@ -33,18 +17,7 @@
 
                             <div class="card-tools">
                                 <a href="{{route('admin.post.create')}}" class="btn btn-success margin">Create</a>
-                                {{--<div class="input-group input-group-sm" style="width: 150px;">--}}
 
-                                    {{--<input type="text" name="table_search" class="form-control float-right"--}}
-                                           {{--placeholder="Search">--}}
-
-                                    {{--<div class="input-group-append">--}}
-                                        {{--<button type="submit" class="btn btn-default"><i class="fas fa-search"></i>--}}
-                                        {{--</button>--}}
-                                    {{--</div>--}}
-                                    {{----}}
-
-                                {{--</div>--}}
                             </div>
 
                         </div>
@@ -56,6 +29,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Category</th>
+                                    <th>Comments Count</th>
                                     <th>Operations</th>
                                 </tr>
                                 </thead>
@@ -65,6 +39,7 @@
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->category ? $item->category->name : ''}}</td>
+                                        <td>{{$item->comments->count()}}</td>
                                         <td>
                                             <x-operation-buttons :model="$item" folder="post" />
                                         </td>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests\Api;
 
+use App\Rules\ModelIdRule;
+use App\Rules\ModelType;
+use App\Rules\ModelTypeRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CommentAddRequest extends FormRequest
@@ -24,9 +27,11 @@ class CommentAddRequest extends FormRequest
     public function rules()
     {
         return [
-            'author' => ['required','max:200','regex:/([A-Z]|[А-Я])[a-zа-я]+\s([A-Z]|[А-Я])[a-zа-я]+/'],
-//            'author' => '^[A-Z0-9\s]*$/',
-            'content' => ['required','max:512'],
+            'author' => ['required', 'max:200', 'regex:/([A-Z]|[А-Я])[a-zа-я]+\s([A-Z]|[А-Я])[a-zа-я]+/'],
+            'model_type' => ['required', new ModelTypeRule()],
+            'model_id' => ['required', new ModelIdRule($this->get('model_type'))],
+            'parent' => ['required', 'integer'],
+            'content' => ['required', 'max:512'],
         ];
     }
 }

@@ -7,8 +7,8 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{route('post.index')}}" class="nav-link"> Posts </a>
         </li>
-        {{--<li class="nav-item d-none d-sm-inline-block">--}}
-            {{--<a href="{{route('admin.category.index')}}" class="nav-link"> Categories </a>--}}
-        {{--</li>--}}
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{route('category.index')}}" class="nav-link"> Categories </a>
+        </li>
     </ul>
 </nav>

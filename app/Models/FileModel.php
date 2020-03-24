@@ -28,15 +28,15 @@ class FileModel extends BaseModel
 
     public static function saveByModel($files, BaseModel $model)
     {
-        $paths = Uploader::upload($files, $model->id);
+        $paths = Uploader::upload($files, $model->getTable().'/'.$model->id);
 
         foreach ($paths as $path) {
-            $path_to_array = explode('/', $path);
+            $path_array = explode('/', $path);
 
             self::create([
-                'name' => end($path_to_array),
+                'name' => end($path_array),
                 'path' => $path,
-                'type' => self::getTypeByName(end($path_to_array)),
+                'type' => self::getTypeByName(end($path_array)),
                 'model_id' => $model->id,
                 'model_type' => get_class($model)
             ]);

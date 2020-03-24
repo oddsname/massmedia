@@ -7,13 +7,18 @@ use Illuminate\View\Component;
 
 class Comments extends Component
 {
-    public $comment, $comments, $isChild;
+    public $comment, $comments, $modelId, $modelType, $parent;
 
-    public function __construct(Comment $comment, $comments, $isChild = false)
+    protected $except = ['toString'];
+
+    public function __construct(Comment $comment, $comments, $modelId, $modelType, $parent)
     {
         $this->comment = $comment;
         $this->comments = $comments;
-        $this->isChild = $isChild;
+        $this->parent = $parent;
+
+        $this->modelId = $modelId;
+        $this->modelType = $modelType;
     }
 
     /**
@@ -24,5 +29,16 @@ class Comments extends Component
     public function render()
     {
         return view('user.components.comments');
+    }
+
+    public function toString()
+    {
+        $array = [];
+
+        foreach ($this as $key => $item) {
+            $array[$key] = $item;
+        }
+
+        return view('user.components.comments', $array)->render();
     }
 }

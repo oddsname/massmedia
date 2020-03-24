@@ -56,7 +56,9 @@
                                             @endif
                                             <div class="tab-pane fade" id="product-rating" role="tabpanel"
                                                  aria-labelledby="product-rating-tab">
-                                                <x-user.comments-section :comments="$post->comments"></x-user.comments-section>
+
+                                                <x-user.comments-section :model="$post" :comments="$post->comments"></x-user.comments-section>
+
                                             </div>
                                         </div>
                                     </div>

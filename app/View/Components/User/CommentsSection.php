@@ -6,11 +6,12 @@ use Illuminate\View\Component;
 
 class CommentsSection extends Component
 {
-    public $comments;
+    public $comments, $model;
 
-    public function __construct($comments)
+    public function __construct($comments, $model)
     {
         $this->comments = $comments;
+        $this->model = $model;
     }
 
     /**

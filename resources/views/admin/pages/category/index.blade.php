@@ -39,6 +39,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Comments Count</th>
                                     <th>Operations</th>
                                 </tr>
                                 </thead>
@@ -47,6 +48,7 @@
                                     <tr>
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->name}}</td>
+                                        <td>{{$item->comments->count()}}</td>
                                         <td>
                                             <x-operation-buttons :model="$item" folder="category" />
                                         </td>

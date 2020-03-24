@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -18,7 +19,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('admin.pages.'.$this->folder.'.index', [
-           'data' => Category::orderBy('id', 'desc')->get(),
+           'data' => Category::orderBy('id', 'desc')->with('comments')->get(),
         ]);
     }
 
@@ -77,12 +78,13 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Category $categoryd
+     * @param  Category $category
      * @return Redirect
      */
     public function destroy(Category $category)
     {
         $category->delete();
+        Comment::deleteByModel($category);
 
         return redirect(route('admin.category.index'));
     }
