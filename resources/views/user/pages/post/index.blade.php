@@ -7,11 +7,19 @@
                 <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item">
-                            <a href="{{route('post.index')}}">All</a>
+                            @if(request()->category === null)
+                                All
+                            @else
+                                <a href="{{route('post.index')}}">All</a>
+                            @endif
                         </li>
                         @foreach($categories as $category)
                             <li class="breadcrumb-item">
-                                <a href="{{route('post.index', ['category' => $category->id])}}">{{$category->name}}</a>
+                                @if(request()->category == $category->id)
+                                    {{$category->name}}
+                                @else
+                                    <a href="{{route('post.index', ['category' => $category->id])}}">{{$category->name}}</a>
+                                @endif
                             </li>
                         @endforeach
                     </ol>

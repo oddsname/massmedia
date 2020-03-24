@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be662e0b-849b-4a92-b5c2-c78370882d27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,15 +24,6 @@
               <folding>
                 <element signature="e#45#81#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -87,10 +79,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-144" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -191,7 +192,6 @@
         <option value="$PROJECT_DIR$/resources/views/user/components/comments.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/pages/category/single.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Category.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/PostController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/BrowserCounter.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/pages/category/index.blade.php" />
@@ -202,6 +202,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/Models/FileModel.php" />
         <option value="$PROJECT_DIR$/public/assets/dist/js/custom/user.js" />
+        <option value="$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php" />
       </list>
     </option>
   </component>
@@ -437,6 +438,36 @@
               <item name="massmedia.test.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="massmedia.test.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massmedia.test.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="massmedia.test.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massmedia.test.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="massmedia.test.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massmedia.test.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="massmedia.test.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="massmedia.test.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="post" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -500,12 +531,12 @@
       <workItem from="1584976604327" duration="2264000" />
       <workItem from="1584980150643" duration="15975000" />
       <workItem from="1585037802872" duration="613000" />
-      <workItem from="1585066252861" duration="24093000" />
+      <workItem from="1585066252861" duration="24344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106162000" />
+    <option name="totallyTimeSpent" value="106413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -911,6 +935,13 @@
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/pages/post/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
       </provider>
     </entry>
   </component>
