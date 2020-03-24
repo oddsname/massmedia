@@ -31,7 +31,8 @@
                             <div class="inner">
                                 <h3>{{$post->name}}</h3>
 
-                                <p>{{$post->category->name}}</p>
+                                <p>{{isset($post->category) ? $post->category->name : ''}}</p>
+
                             </div>
                             {{--<div class="icon">--}}
                             {{--<i class="ion ion-bag"></i>--}}
