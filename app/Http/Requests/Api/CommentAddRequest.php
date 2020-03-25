@@ -28,8 +28,7 @@ class CommentAddRequest extends FormRequest
     {
         return [
             'author' => ['required', 'max:200', 'regex:/([A-Z]|[А-Я])[a-zа-я]+\s([A-Z]|[А-Я])[a-zа-я]+/'],
-            'model_type' => ['required', new ModelTypeRule()],
-            'model_id' => ['required', new ModelIdRule($this->get('model_type'))],
+            'model_type' => ['required', new ModelTypeRule($this->get('model_id'))],
             'parent' => ['required', 'integer'],
             'content' => ['required', 'max:512'],
         ];

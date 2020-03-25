@@ -6,14 +6,11 @@ use Illuminate\Contracts\Validation\Rule;
 
 class ModelTypeRule implements Rule
 {
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    private $model_id = 0;
+
+    public function __construct($model_id)
     {
-        //
+        $this->model_id = $model_id;
     }
 
     /**
@@ -25,7 +22,11 @@ class ModelTypeRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        return class_exists($value) && method_exists(new $value, 'comments');
+         if(class_exists($value) && method_exists(new $value, 'comments')){
+             return (new $value)->find($this->model_id) !== null;
+         }
+
+         return false;
     }
 
     /**
