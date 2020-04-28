@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helper\Uploader\FileUploader;
 use Faker\Factory;
 use Faker\Generator;
 use Faker\Provider\ru_RU\Text;
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Generator::class, function(){
+        $this->app->singleton(Generator::class, function () {
             return Factory::create('uk_UA');
         });
     }
@@ -29,6 +30,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
     }
 }

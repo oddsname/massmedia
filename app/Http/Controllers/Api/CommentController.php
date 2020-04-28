@@ -7,9 +7,11 @@ use App\Models\Comment;
 use App\View\Components\User\Comments as CommentsComponent;
 
 
-class CommentController{
+class CommentController
+{
 
-    public function add(CommentAddRequest $request){
+    public function add(CommentAddRequest $request)
+    {
         $data = $request->only('author', 'content', 'model_id', 'model_type', 'parent');
 
         $new_comment = Comment::create($data);

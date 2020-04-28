@@ -5,16 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Comment;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
-    protected $folder = 'category';
+    protected string $folder = 'category';
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -26,11 +31,11 @@ class CategoryController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        return view('admin.pages.'.$this->folder.'.create',[
+        return view('admin.pages.'.$this->folder.'.create', [
             'folder' => $this->folder,
         ]);
     }
@@ -38,8 +43,8 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
      */
     public function store(Request $request)
     {
@@ -52,7 +57,7 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Category  $category
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function edit(Category $category)
     {
@@ -64,9 +69,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  Category  $category
-     * @return \Illuminate\Http\Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function update(Request $request, Category $category)
     {
@@ -79,12 +84,12 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Category $category
-     * @return Redirect
+     * @return Application|RedirectResponse|Redirector
      */
     public function destroy(Category $category)
     {
-        $category->delete();
         Comment::deleteByModel($category);
+        $category->delete();
 
         return redirect(route('admin.category.index'));
     }

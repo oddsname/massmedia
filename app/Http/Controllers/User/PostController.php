@@ -9,17 +9,16 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view('user.pages.post.index', [
-            'posts' => Post::with('category')->category(request()->category)->orderBy('id', 'desc')->get(),
+            'posts' => Post::with('category')->category($request->category)->orderBy('id', 'desc')->get(),
             'categories' => Category::all()
         ]);
     }
 
     public function single(Post $post)
     {
-
         return view('user.pages.post.single', [
             'post' => $post->load(['category', 'file', 'comments'])
         ]);
